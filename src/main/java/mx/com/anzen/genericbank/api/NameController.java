@@ -28,7 +28,7 @@ public class NameController {
 		
 		Map<String,Object> map=new HashMap();
 		map.put("fileDefinition.idFileType",json.get("IdFileType").toString()); 
-		Map<String,Object> mapResult=mongo.consulta("BancaGenerica",map); 
+		Map<String,Object> mapResult=mongo.consulta("ADBancaGenerica",map); 
 		  
         return mapResult;
     }
