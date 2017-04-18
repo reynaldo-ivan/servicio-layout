@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 import com.mongodb.util.JSON;
 
 import mx.com.anzen.mongo.services.MongoService;
@@ -22,7 +22,7 @@ public class NameController {
 	@Autowired
 	private MongoService mongo;
 	 
-	
+	@CrossOrigin(origins = "http://54.215.247.221:9092")
 	@RequestMapping(value="/layout")
     public Map<String,Object> layout(@RequestBody JSONObject  json ) throws UnknownHostException{ 
 		
