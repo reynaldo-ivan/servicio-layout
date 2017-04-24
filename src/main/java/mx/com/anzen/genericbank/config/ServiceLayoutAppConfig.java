@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @ComponentScan("mx.com.anzen.mongo")
 @Configuration
-public class NameAppConfig {
+public class ServiceLayoutAppConfig {
 	 
 	@Bean
 	public ConexionDataBean conexion(){
@@ -30,7 +30,8 @@ public class NameAppConfig {
 	        return new WebMvcConfigurerAdapter() {
 	            @Override
 	            public void addCorsMappings(CorsRegistry registry) {
-	                registry.addMapping("/Layout").allowedOrigins("http://54.215.247.221:9092");
+//	                registry.addMapping("/Layout").allowedOrigins("http://54.215.247.221:9092");
+	            	registry.addMapping("/Layout").allowedOrigins("*");
 	            }
 	        };
 	    }	

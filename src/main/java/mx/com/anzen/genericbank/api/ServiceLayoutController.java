@@ -13,13 +13,13 @@ import java.util.HashMap;
 import java.util.Map;
    
 @RestController
-public class NameController {
+public class ServiceLayoutController {
 	
 	@Autowired
 	private MongoService mongo;
 	
 
-private static Logger log = Logger.getLogger(NameController.class);
+private static Logger log = Logger.getLogger(ServiceLayoutController.class);
 	   
 	@RequestMapping(value="/Layout")
     public Map<String,Object> layout(@RequestBody JSONObject  json ) { 

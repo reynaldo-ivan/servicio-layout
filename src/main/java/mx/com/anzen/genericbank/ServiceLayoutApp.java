@@ -5,9 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-public class NameApp {
+public class ServiceLayoutApp {
 
 	public static void main(String[] args) {
-		SpringApplication.run(NameApp.class, args);
+		SpringApplication.run(ServiceLayoutApp.class, args);
 	}
 }
