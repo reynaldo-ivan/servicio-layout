@@ -1,4 +1,5 @@
 package mx.com.anzen.genericbank.api;
+ 
 
 import org.apache.log4j.Logger;
 import org.json.simple.JSONObject;
@@ -30,10 +31,10 @@ private static Logger log = Logger.getLogger(ServiceLayoutController.class);
 		Map<String,Object> mapResult=null;
 		try{
 			map.put("fileDefinition.idFileType",json.get("IdFileType"));
-			mapProyect.put("fileDefinition.idFileType", 0);
+			mapProyect.put("_id", 0);
 			System.out.println("mapa s"+map);
 //			mapResult=mongo.consulta("ADBancaGenerica",map); 
-			mapResult=mongo.consultaUsandoProyect("ADBancaGenerica", 
+			mapResult=mongo.consult("ADBancaGenerica", 
 					 map, mapProyect);
 		}catch (HttpMessageNotReadableException e) {
 			System.out.println("exception");
