@@ -6,7 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController; 
+import org.springframework.web.bind.annotation.RestController;
+
 import mx.com.anzen.mongo.services.MongoService;
 
 import java.util.HashMap;
@@ -25,11 +26,15 @@ private static Logger log = Logger.getLogger(ServiceLayoutController.class);
     public Map<String,Object> layout(@RequestBody JSONObject  json ) { 
 		
 		Map<String,Object> map=new HashMap();
+		Map<String,Object> mapProyect=new HashMap();
 		Map<String,Object> mapResult=null;
 		try{
-			map.put("fileDefinition.idFileType",json.get("IdFileType")); 
-			mapResult=mongo.consulta("ADBancaGenerica",map); 
-			  
+			map.put("fileDefinition.idFileType",json.get("IdFileType"));
+			mapProyect.put("fileDefinition.idFileType", 0);
+			System.out.println("mapa s"+map);
+//			mapResult=mongo.consulta("ADBancaGenerica",map); 
+			mapResult=mongo.consultaUsandoProyect("ADBancaGenerica", 
+					 map, mapProyect);
 		}catch (HttpMessageNotReadableException e) {
 			System.out.println("exception");
 			log.info("Error: "+e.getMessage());
