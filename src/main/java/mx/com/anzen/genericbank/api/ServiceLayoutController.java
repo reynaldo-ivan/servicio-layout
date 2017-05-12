@@ -30,10 +30,9 @@ private static Logger log = Logger.getLogger(ServiceLayoutController.class);
 		Map<String,Object> mapProyect=new HashMap();
 		Map<String,Object> mapResult=null;
 		try{
-			map.put("fileDefinition.idFileType",json.get("IdFileType"));
+			map.put("idFileType",json.get("IdFileType"));
 			mapProyect.put("_id", 0);
-			System.out.println("mapa s"+map);
-//			mapResult=mongo.consulta("ADBancaGenerica",map); 
+			System.out.println("mapa s"+map);  
 			mapResult=mongo.consult("ADBancaGenerica", 
 					 map, mapProyect);
 		}catch (HttpMessageNotReadableException e) {
